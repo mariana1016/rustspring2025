@@ -25,7 +25,7 @@ fn main () {
     }
 }*/
 
-fn is_even (n: i32) -> bool {
+/*fn is_even (n: i32) -> bool {
     n % 2 == 0
 }
 fn main() {
@@ -61,9 +61,9 @@ for &num in &numbers {
     large = large.max(num);
 }
 println!("{} Largest number of all: ", large);
-}
+} */
 
-/*fn check_guess(guess: i32, secret: i32) -> i32 {
+fn check_guess(guess: i32, secret: i32) -> i32 {
     match guess {
         _ if guess == secret => 0, 
         _ if guess > secret => 1, 
@@ -93,4 +93,4 @@ fn main() {
             guess += 1;
     }
     println!("It took you this many guesses until you got it right {}", attempts);
-}*/
+}
