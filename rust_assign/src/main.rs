@@ -12,7 +12,7 @@ fn main() {
 } */
 
 //problem 2
-fn clone_and_modify(s: &String) -> String {
+/*fn clone_and_modify(s: &String) -> String {
     // Your code here
     let mut cloneing = s.clone();
     cloneing.push_str("World");
@@ -24,10 +24,10 @@ fn main() {
     let modified = clone_and_modify(&s);
     println!("Original: {}", s); // Should print: "Original: Hello, "
     println!("Modified: {}", modified); // Should print: "Modified: Hello, World!"
-} 
+} */
 
 //problem 3
-/*#[allow(unused_variables, unused_mut)]
+#[allow(unused_variables, unused_mut)]
 fn sum(total: &mut i32, low: i32, high: i32) {
     // Write your code here!
     *total = (low..=high).sum();
@@ -39,6 +39,6 @@ fn main() {
     sum(&mut total, 0, 100);
     // total should be 5050
     println!("Total sum {}", total);
-} */
+} 
 
 
