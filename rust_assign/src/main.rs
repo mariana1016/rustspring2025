@@ -1,96 +1,44 @@
- //declare the constant values for faren 
-/*const FREEZING_WATER : f64 = 32.0;
+//problem 1
+fn concat_strings(s1: &String, s2: &String) -> String {
+    //your code here
+   format!("{}{}", s1, s2)
+}
 
-//create the converters
-//faren -> cels
-fn fahrenheit_to_celsius(f: f64) -> f64{
-    (f - FREEZING_WATER) * 5.0 / 9.0
+fn main() {
+    let s1 = String::from("Hello, ");
+    let s2 = String::from("World!");
+    let result = concat_strings(&s1, &s2);
+    println!("{}", result); // Should print: "Hello, World!"
 } 
 
-//cels to faren
-fn celsius_to_fahrenheit(c: f64) -> f64 {
-    (c * 9.0 / 5.0) + FREEZING_WATER
+//problem 2
+/*fn clone_and_modify(s: &String) -> String {
+    // Your code here
+    let mut cloneing = s.clone();
+    cloneing.push_str("World");
+    cloneing
 }
-fn main () {
-    //made the inital temp this, but can change it if needed
-    let mut temp_f: f64 = 50.0;
-    let temp_c = fahrenheit_to_celsius(temp_f);
-    println!("{} deg faren {:.2} deg cels", temp_f, temp_c);
 
-    //loop 
-    for i in 1..=5{
-        let next_f = temp_f + i as f64;
-        let next_c = fahrenheit_to_celsius(next_f as f64);
-        println!("{} deg faren {:.2} deg cels", next_f, next_c);
-    }
-}*/
-
-/*fn is_even (n: i32) -> bool {
-    n % 2 == 0
-}
 fn main() {
-//create an array of int numbers of my choice
-let numbers = [1,2,3,4,5,10,34,55,78,27];
+    let s = String::from("Hello, ");
+    let modified = clone_and_modify(&s);
+    println!("Original: {}", s); // Should print: "Original: Hello, "
+    println!("Modified: {}", modified); // Should print: "Modified: Hello, World!"
+} 
 
-//use for loop to iterate through the array
-for &num in &numbers {
-    match (num % 3 == 0, num % 5 == 0){
-        (true, true) => println! ("{}: FizzBuzz", num),
-        (true, false) => println! ("{}: Fizz", num),
-        (false, true) => println! ("{}: Buzz", num),
-        //else, add the num to the string
-        _ => match is_even(num){
-            true => println!("{}: Even" , num),
-            false => println! ("{}: Odd", num),
-        },
-    }
+//problem 3
+#[allow(unused_variables, unused_mut)]
+fn sum(total: &mut i32, low: i32, high: i32) {
+    // Write your code here!
+    *total = (low..=high).sum();
 }
-//now lets make a while loop
-let mut sum = 0; //create sum and set it to 0
-let mut x = 0; //create mutable variable x and set it to 0
-while x < numbers.len(){
-    sum += numbers[x];
-    x += 1;
-}
-println!("{} Sum of numbers: ", sum);
 
-//find the largest number
-//using a loop'
-let mut large = numbers[0];
-for &num in &numbers {
-    large = large.max(num);
-}
-println!("{} Largest number of all: ", large);
+fn main() {
+    // create necessary variables and test your function for low 0 high 100
+    let mut total = 0;
+    sum(&mut total, 0, 100);
+    // total should be 5050
+    println!("Total sum {}", total);
 } */
 
-fn check_guess(guess: i32, secret: i32) -> i32 {
-    match guess {
-        _ if guess == secret => 0, 
-        _ if guess > secret => 1, 
-        _ => -1,
-    }
-}
 
-fn main() {
-    let secret = 7;
-    let mut guess = 1;
-    let mut attempts = 0;
-
-    loop {
-        //guess = 5;
-        attempts += 1;
-
-        match check_guess (guess, secret){
-            0 => {
-                println!("The correct numbers is: {}", secret);
-                break;
-
-            }
-           1 => println! ("{} NO! Too high", guess),
-           -1 => println! ("{} NO! Too low", guess),
-           _ => (),
-        }
-            guess += 1;
-    }
-    println!("It took you this many guesses until you got it right {}", attempts);
-}

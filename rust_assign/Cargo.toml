@@ -1,5 +1,5 @@
 [package]
-name = "hello_wordl"
+name = "rust_assign"
 version = "0.1.0"
 edition = "2021"
 
