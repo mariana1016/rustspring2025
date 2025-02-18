@@ -1,5 +1,5 @@
 //problem 1
-fn concat_strings(s1: &String, s2: &String) -> String {
+/*fn concat_strings(s1: &String, s2: &String) -> String {
     //your code here
    format!("{}{}", s1, s2)
 }
@@ -9,10 +9,10 @@ fn main() {
     let s2 = String::from("World!");
     let result = concat_strings(&s1, &s2);
     println!("{}", result); // Should print: "Hello, World!"
-} 
+} */
 
 //problem 2
-/*fn clone_and_modify(s: &String) -> String {
+fn clone_and_modify(s: &String) -> String {
     // Your code here
     let mut cloneing = s.clone();
     cloneing.push_str("World");
@@ -27,7 +27,7 @@ fn main() {
 } 
 
 //problem 3
-#[allow(unused_variables, unused_mut)]
+/*#[allow(unused_variables, unused_mut)]
 fn sum(total: &mut i32, low: i32, high: i32) {
     // Write your code here!
     *total = (low..=high).sum();
